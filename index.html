@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Victoria Catroppa, graphic designer. Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
+  <meta name="description" content="Victoria Catroppa, graphic designer. Identità visive, editoria e contenuti digitali.">
   <meta name="author" content="Victoria Catroppa">
-  <meta property="og:title" content="Victoria Catroppa - Graphic Designer">
-  <meta property="og:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
+  <meta property="og:title" content="Victoria Catroppa - Portfolio">
+  <meta property="og:description" content="Identità visive, editoria e contenuti digitali.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://itsvikicat.github.io/link-hub/">
   <meta property="og:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Victoria Catroppa - Graphic Designer">
-  <meta name="twitter:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
+  <meta name="twitter:title" content="Victoria Catroppa - Portfolio">
+  <meta name="twitter:description" content="Identità visive, editoria e contenuti digitali.">
   <meta name="twitter:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
-  <meta name="theme-color" content="#4f277c">
+  <meta name="theme-color" content="#ffffff">
 
-  <title>Victoria Catroppa - Graphic Designer</title>
+  <title>Victoria Catroppa - Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="icon" href="brand-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="brand-icon.png">
 
@@ -34,491 +33,170 @@
     }
 
     :root {
+      --bg: #fff;
       --ink: #141014;
-      --paper: #fff;
-      --paper-soft: #faf7ff;
-      --lilac: #d8c0ff;
-      --lilac-hover: #eadcff;
-      --lilac-deep: #6f4ba0;
-      --line: rgba(23, 19, 29, 0.14);
-      --muted: rgba(20, 16, 20, 0.66);
-      --radius-soft: 18px;
-      --radius-pill: 999px;
-      --shadow: 0 14px 34px rgba(105, 75, 145, 0.14);
-      --transition: 220ms ease;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --pink: #ff4fa0;
+      --button: #ff8fc4;
+      --button-hover: #ffaed4;
+      --soft: #ffe9f3;
+      --shadow: 0 14px 34px rgba(184, 64, 123, 0.14);
     }
 
     body {
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       color: var(--ink);
-      background: var(--paper);
+      background: var(--bg);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow-x: hidden;
-      transition: background 360ms ease, color 360ms ease;
+      padding: 34px 18px;
     }
 
-    body.dark-mode {
-      --ink: #f8f3ed;
-      --paper: #141014;
-      --paper-soft: #211a2b;
-      --lilac: #d8c0ff;
-      --lilac-hover: #eadcff;
-      --lilac-deep: #f3eaff;
-      --line: rgba(248, 243, 237, 0.16);
-      --muted: rgba(248, 243, 237, 0.68);
-      --radius-soft: 18px;
-      --radius-pill: 999px;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
-      background: var(--paper);
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-pill);
-      background: color-mix(in srgb, var(--paper-soft) 72%, white);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: transform var(--transition), border-color var(--transition), color var(--transition);
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-      border-color: var(--lilac);
-      color: var(--lilac-deep);
-    }
-
-    .container {
-      width: min(100%, 620px);
-      padding: 44px 22px 28px;
+    main {
+      width: min(100%, 390px);
       text-align: center;
-      animation: fadeIn 700ms ease-out;
     }
 
-    .brand-logo {
-      width: min(42vw, 150px);
+    .logo {
+      width: clamp(62px, 18vw, 88px);
       height: auto;
-      margin: 0 auto 22px;
       display: block;
-      opacity: 0;
-      transform: translateY(10px) scale(0.96);
-      animation: logoReveal 680ms ease 120ms forwards;
-      transition: filter 360ms ease, transform var(--transition);
-    }
-
-    body.dark-mode .brand-logo {
-      filter: invert(1);
+      margin: 0 auto 22px;
     }
 
     h1 {
       color: var(--ink);
-      font-size: clamp(2.25rem, 7vw, 4.25rem);
-      line-height: 0.98;
+      font-size: clamp(2rem, 9vw, 2.85rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+    }
+
+    .role {
+      color: var(--pink);
+      font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 0;
-      margin-bottom: 14px;
-    }
-
-    .subtitle {
-      color: var(--ink);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 0;
+      margin-bottom: 12px;
     }
 
-    .subtitle::after {
+    .role::after {
       content: "";
-      width: min(260px, 68vw);
+      width: min(210px, 62vw);
       height: 3px;
       display: block;
-      margin: 14px auto 0;
-      border-radius: var(--radius-pill);
-      background: linear-gradient(90deg, var(--lilac), rgba(255, 255, 255, 0));
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: lineDraw 820ms cubic-bezier(0.16, 1, 0.3, 1) 420ms forwards;
+      margin: 12px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), rgba(255, 255, 255, 0));
     }
 
-    .intro {
-      max-width: 460px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.55;
+    .description {
+      max-width: 320px;
+      margin: 0 auto 26px;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      font-weight: 500;
     }
 
-    .links-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 34px 0 28px;
+    .links {
+      display: grid;
+      gap: 11px;
+      margin-bottom: 22px;
     }
 
-    .btn,
-    .contact-btn {
+    .button {
+      min-height: 52px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--button);
+      color: var(--ink);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      min-height: 58px;
-      border-radius: var(--radius-pill);
-      text-decoration: none;
+      font-size: 0.96rem;
       font-weight: 700;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
-    }
-
-    .btn {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: itemReveal 620ms ease forwards;
-    }
-
-    .btn:nth-child(1) { animation-delay: 540ms; }
-    .btn:nth-child(2) { animation-delay: 660ms; }
-    .btn:nth-child(3) { animation-delay: 780ms; }
-
-    .btn {
-      width: 100%;
-      padding: 16px 24px;
-      border: 1px solid transparent;
-      background: var(--lilac);
-      color: var(--ink);
-      box-shadow: 0 12px 26px rgba(143, 108, 196, 0.18);
-    }
-
-    .btn:hover,
-    .contact-btn:hover {
-      transform: translateY(-4px);
-      background: var(--lilac-hover);
-      box-shadow: 0 18px 38px rgba(143, 108, 196, 0.22);
-    }
-
-    .btn:focus-visible,
-    .contact-btn:focus-visible,
-    .theme-toggle:focus-visible {
-      outline: 3px solid var(--lilac-deep);
-      outline-offset: 4px;
-    }
-
-    .btn i,
-    .contact-btn i {
-      font-size: 1.2rem;
-    }
-
-    .projects-section {
-      margin: 8px 0 28px;
-      text-align: left;
-    }
-
-    .section-title {
-      margin-bottom: 14px;
-      color: var(--ink);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .project-card {
-      min-height: 168px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-soft);
-      background:
-        linear-gradient(145deg, color-mix(in srgb, var(--lilac) 34%, transparent), transparent 58%),
-        var(--paper-soft);
-      color: var(--ink);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       text-decoration: none;
-      box-shadow: 0 10px 28px rgba(105, 75, 145, 0.1);
-      opacity: 0;
-      transform: translateY(16px);
-      animation: itemReveal 680ms ease forwards;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+      box-shadow: 0 10px 24px rgba(184, 64, 123, 0.12);
+      transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
     }
 
-    .project-card:nth-child(1) { animation-delay: 920ms; }
-    .project-card:nth-child(2) { animation-delay: 1.04s; }
-    .project-card:nth-child(3) { animation-delay: 1.16s; }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--lilac);
-      background:
-        linear-gradient(145deg, color-mix(in srgb, var(--lilac-hover) 48%, transparent), transparent 60%),
-        var(--paper-soft);
+    .button:hover {
+      background: var(--button-hover);
+      transform: translateY(-3px);
       box-shadow: var(--shadow);
     }
 
-    .project-card:focus-visible {
-      outline: 3px solid var(--lilac-deep);
+    .button:focus-visible {
+      outline: 3px solid var(--pink);
       outline-offset: 4px;
     }
 
-    .project-kicker {
-      color: var(--lilac-deep);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
+    .button i {
+      font-size: 1.18rem;
     }
 
-    .project-name {
-      margin: 18px 0 22px;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.2;
+    .contact {
+      width: min(100%, 310px);
+      margin: 0 auto;
+      padding: 15px 18px;
+      border-radius: 22px;
+      background: var(--soft);
+      box-shadow: 0 10px 24px rgba(184, 64, 123, 0.1);
     }
 
-    .project-link {
-      align-self: flex-start;
-      padding: 6px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.84);
-      color: #141014;
-      font-size: 0.72rem;
-      font-weight: 700;
-      opacity: 0.82;
-      transform: translateY(3px);
-      transition: opacity var(--transition), transform var(--transition), background var(--transition);
+    .contact p {
+      margin-bottom: 10px;
+      font-size: 0.84rem;
+      line-height: 1.35;
+      font-weight: 500;
     }
 
-    .project-card:hover .project-link {
-      opacity: 1;
-      transform: translateY(0);
-      background: rgba(255, 255, 255, 0.94);
-    }
-
-    .contact-section {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-soft);
-      background: color-mix(in srgb, var(--paper-soft) 84%, white);
-      box-shadow: 0 10px 30px rgba(48, 31, 74, 0.09);
-    }
-
-    .contact-section h2 {
+    .email {
       color: var(--ink);
-      font-size: 1.12rem;
-      margin-bottom: 8px;
-      letter-spacing: 0;
-    }
-
-    .contact-section p {
-      margin: 0 auto 18px;
-      max-width: 440px;
-      color: color-mix(in srgb, var(--ink) 72%, transparent);
-      font-size: 0.94rem;
-      line-height: 1.55;
-    }
-
-    .contact-btn {
-      padding: 13px 22px;
-      background: var(--lilac);
-      color: var(--ink);
-    }
-
-    footer {
-      width: min(100%, 640px);
-      padding: 0 22px 28px;
-      color: color-mix(in srgb, var(--ink) 58%, transparent);
-      text-align: center;
-      font-size: 0.78rem;
-    }
-
-    footer a {
-      color: var(--lilac-deep);
+      font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .email:hover {
+      color: var(--pink);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes logoReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes lineDraw {
-      to {
-        transform: scaleX(1);
-      }
-    }
-
-    @keyframes itemReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 560px) {
+    @media (max-width: 420px) {
       body {
-        justify-content: flex-start;
-      }
-
-      .container {
-        padding-top: 88px;
-      }
-
-      .theme-toggle {
-        top: 16px;
-        right: 16px;
-      }
-
-      .brand-logo {
-        width: min(46vw, 132px);
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        min-height: 142px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .brand-logo,
-      .subtitle::after,
-      .btn,
-      .project-card {
-        opacity: 1;
-        transform: none;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.001ms !important;
+        padding: 26px 16px;
       }
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambia tema" aria-pressed="false">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-  </button>
-
-  <main class="container">
-    <img class="brand-logo" src="brand-icon.png" alt="Vikenike Design">
+  <main>
+    <img class="logo" src="brand-icon.png" alt="Vikenike Design">
 
     <h1>Victoria Catroppa</h1>
-    <p class="subtitle">Graphic Designer</p>
-    <p class="intro">Visual identity, social design e contenuti editoriali per brand creativi.</p>
+    <p class="role">Graphic Designer</p>
+    <p class="description">Identità visive, editoria e contenuti digitali.</p>
 
-    <div class="links-container" aria-label="Link principali">
-      <a href="https://www.behance.net/victoricatropp" class="btn" target="_blank" rel="noopener noreferrer">
+    <nav class="links" aria-label="Link social">
+      <a class="button" href="https://www.behance.net/victoricatropp" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-behance" aria-hidden="true"></i> Behance
       </a>
-      <a href="https://www.instagram.com/victoriacatroppadesign/" class="btn" target="_blank" rel="noopener noreferrer">
+      <a class="button" href="https://www.instagram.com/victoriacatroppadesign/" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
       </a>
-      <a href="https://www.linkedin.com/in/victoria-catroppa-08a5a2292/" class="btn" target="_blank" rel="noopener noreferrer">
+      <a class="button" href="https://www.linkedin.com/in/victoria-catroppa-08a5a2292/" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
       </a>
-    </div>
+    </nav>
 
-    <section class="projects-section" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title">Progetti</h2>
-      <div class="project-grid">
-        <a class="project-card" href="https://www.behance.net/gallery/236715117/Festival-diPassaggio" target="_blank" rel="noopener noreferrer">
-          <span class="project-kicker">Brand identity</span>
-          <span class="project-name">Festival diPassaggio</span>
-          <span class="project-link">Apri progetto</span>
-        </a>
-        <a class="project-card" href="https://www.behance.net/gallery/207625563/Museo-del-Risorgimento" target="_blank" rel="noopener noreferrer">
-          <span class="project-kicker">Brand identity</span>
-          <span class="project-name">Museo del Risorgimento</span>
-          <span class="project-link">Apri progetto</span>
-        </a>
-        <a class="project-card" href="https://www.behance.net/gallery/218944515/Genova-Ottocento" target="_blank" rel="noopener noreferrer">
-          <span class="project-kicker">Brand identity</span>
-          <span class="project-name">Genova Ottocento</span>
-          <span class="project-link">Apri progetto</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="contact-section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Parliamo del tuo prossimo progetto</h2>
-      <p>Disponibile per brand identity, social kit, layout editoriali e collaborazioni creative.</p>
-      <a href="mailto:victoriacatroppa@gmail.com" class="contact-btn">
-        <i class="fas fa-envelope" aria-hidden="true"></i> Scrivimi
-      </a>
+    <section class="contact" aria-label="Contatto email">
+      <p>Per progetti e collaborazioni</p>
+      <a class="email" href="mailto:victoriacatroppa@gmail.com">victoriacatroppa@gmail.com</a>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Victoria Catroppa. Tutti i diritti riservati. | <a href="https://github.com/itsvikicat" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-  </footer>
-
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-
-    function setTheme(theme) {
-      const isDark = theme === 'dark';
-      body.classList.toggle('dark-mode', isDark);
-      themeToggle.setAttribute('aria-pressed', String(isDark));
-      themeToggle.innerHTML = isDark
-        ? '<i class="fas fa-sun" aria-hidden="true"></i>'
-        : '<i class="fas fa-moon" aria-hidden="true"></i>';
-      localStorage.setItem('theme', theme);
-    }
-
-    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-
-    themeToggle.addEventListener('click', () => {
-      setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark');
-    });
-  </script>
 </body>
 </html>
