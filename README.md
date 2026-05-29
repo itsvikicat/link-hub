@@ -8,7 +8,7 @@ Mini portfolio personale per raccogliere i link principali di Victoria Catroppa,
 - Call to action per richieste di collaborazione
 - Tema chiaro/scuro con preferenza salvata
 - Meta tag social per anteprime più curate
-- Logo PNG in homepage e favicon con V nera
+- Logo PNG in homepage, nero in tema chiaro e bianco in tema notte
 - Layout responsive, pulito e accessibile
 
 ## Focus
