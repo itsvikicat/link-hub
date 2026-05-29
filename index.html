@@ -9,10 +9,11 @@
   <meta property="og:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://itsvikicat.github.io/link-hub/">
-  <meta property="og:image" content="https://itsvikicat.github.io/link-hub/brand-icon.png">
+  <meta property="og:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Victoria Catroppa - Graphic Designer">
   <meta name="twitter:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
+  <meta name="twitter:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
   <meta name="theme-color" content="#4f277c">
 
   <title>Victoria Catroppa - Graphic Designer</title>
@@ -40,6 +41,7 @@
       --lilac-hover: #eadcff;
       --lilac-deep: #6f4ba0;
       --line: rgba(23, 19, 29, 0.14);
+      --muted: rgba(20, 16, 20, 0.66);
       --shadow: 0 14px 34px rgba(105, 75, 145, 0.14);
       --transition: 220ms ease;
     }
@@ -68,6 +70,7 @@
       --lilac-hover: #eadcff;
       --lilac-deep: #f3eaff;
       --line: rgba(248, 243, 237, 0.16);
+      --muted: rgba(248, 243, 237, 0.68);
       --shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
       background: var(--paper);
     }
@@ -142,6 +145,14 @@
       background: linear-gradient(90deg, var(--lilac), rgba(255, 255, 255, 0));
     }
 
+    .intro {
+      max-width: 460px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
     .links-container {
       display: flex;
       flex-direction: column;
@@ -188,6 +199,82 @@
     .btn i,
     .contact-btn i {
       font-size: 1.2rem;
+    }
+
+    .projects-section {
+      margin: 8px 0 28px;
+      text-align: left;
+    }
+
+    .section-title {
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project-card {
+      min-height: 168px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--lilac) 34%, transparent), transparent 58%),
+        var(--paper-soft);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(105, 75, 145, 0.1);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--lilac);
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--lilac-hover) 48%, transparent), transparent 60%),
+        var(--paper-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card:focus-visible {
+      outline: 3px solid var(--lilac-deep);
+      outline-offset: 4px;
+    }
+
+    .project-kicker {
+      color: var(--lilac-deep);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .project-name {
+      margin: 18px 0 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: #141014;
+      font-size: 0.72rem;
+      font-weight: 700;
     }
 
     .contact-section {
@@ -265,6 +352,14 @@
       .brand-logo {
         width: min(46vw, 132px);
       }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: 142px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -289,18 +384,43 @@
 
     <h1>Victoria Catroppa</h1>
     <p class="subtitle">Graphic Designer</p>
+    <p class="intro">Visual identity, social design e contenuti editoriali per brand creativi.</p>
 
     <div class="links-container" aria-label="Link principali">
+      <a href="https://www.behance.net/victoricatropp" class="btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-behance" aria-hidden="true"></i> Portfolio su Behance
+      </a>
       <a href="https://www.instagram.com/victoriacatroppadesign/" class="btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
-      </a>
-      <a href="https://www.behance.net/victoricatropp" class="btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-behance" aria-hidden="true"></i> Behance
       </a>
       <a href="https://www.linkedin.com/in/victoria-catroppa-08a5a2292/" class="btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
       </a>
+      <a href="mailto:victoriacatroppa@gmail.com" class="btn">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+      </a>
     </div>
+
+    <section class="projects-section" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Progetti</h2>
+      <div class="project-grid">
+        <a class="project-card" href="https://www.behance.net/gallery/236715117/Festival-diPassaggio" target="_blank" rel="noopener noreferrer">
+          <span class="project-kicker">Brand identity</span>
+          <span class="project-name">Festival diPassaggio</span>
+          <span class="project-link">Apri progetto</span>
+        </a>
+        <a class="project-card" href="https://www.behance.net/gallery/207625563/Museo-del-Risorgimento" target="_blank" rel="noopener noreferrer">
+          <span class="project-kicker">Brand identity</span>
+          <span class="project-name">Museo del Risorgimento</span>
+          <span class="project-link">Apri progetto</span>
+        </a>
+        <a class="project-card" href="https://www.behance.net/gallery/218944515/Genova-Ottocento" target="_blank" rel="noopener noreferrer">
+          <span class="project-kicker">Brand identity</span>
+          <span class="project-name">Genova Ottocento</span>
+          <span class="project-link">Apri progetto</span>
+        </a>
+      </div>
+    </section>
 
     <section class="contact-section" aria-labelledby="contact-title">
       <h2 id="contact-title">Parliamo del tuo prossimo progetto</h2>

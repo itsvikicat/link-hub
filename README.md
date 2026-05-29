@@ -5,6 +5,8 @@ Mini portfolio personale per raccogliere i link principali di Victoria Catroppa,
 ## Cosa contiene
 
 - Collegamenti a Instagram, Behance e LinkedIn
+- Bottone email tra i link principali
+- Sezione progetti con tre link Behance dedicati alla brand identity
 - Call to action per richieste di collaborazione
 - Tema chiaro/scuro con preferenza salvata
 - Meta tag social per anteprime più curate
