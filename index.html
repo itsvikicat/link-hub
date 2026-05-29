@@ -21,16 +21,6 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%235e2ca5'>V</text></svg>">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    // Sostituisci XXXXXXXXXX con il tuo ID Google Analytics
-    // gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
   <style>
     * {
       margin: 0;
@@ -483,25 +473,6 @@
       color: var(--primary-light);
     }
 
-    /* Loading animation */
-    .loading {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      animation: loading 1.4s infinite;
-    }
-
-    @keyframes loading {
-      0%, 100% {
-        opacity: 0.3;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
     /* Hover glow effect */
     .glow-hover {
       position: relative;
@@ -549,12 +520,8 @@
         <p>Anni di Esperienza</p>
       </div>
       <div class="stats-card glow-hover">
-        <span>50+</span>
-        <p>Progetti Completati</p>
-      </div>
-      <div class="stats-card glow-hover">
-        <span>100%</span>
-        <p>Soddisfazione</p>
+        <span>✨</span>
+        <p>Tanti Progetti</p>
       </div>
     </div>
 
@@ -575,7 +542,7 @@
     <div class="contact-section">
       <h3>📧 Vuoi Contattarmi?</h3>
       <p style="margin-bottom: 15px; font-size: 14px;">Sono disponibile per collaborazioni e nuovi progetti.</p>
-      <a href="mailto:victoria@example.com" class="contact-btn" title="Invia email">
+      <a href="mailto:victoriacatroppa@gmail.com" class="contact-btn" title="Invia email">
         <i class="fas fa-envelope"></i> Invia Email
       </a>
     </div>
@@ -639,13 +606,6 @@
       button.addEventListener('click', function(e) {
         const platform = this.textContent.trim().split('\n')[0];
         console.log(`Link cliccato: ${platform}`);
-        
-        // Uncomment per Google Analytics
-        // if (typeof gtag !== 'undefined') {
-        //   gtag('event', 'link_click', {
-        //     'platform': platform
-        //   });
-        // }
       });
     });
 
@@ -654,30 +614,10 @@
       console.log('Portfolio caricato con successo! 🎨');
     });
 
-    // Ripple effect sui click
-    document.querySelectorAll('.btn, .contact-btn, .stats-card').forEach(element => {
-      element.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-      });
-    });
-
     // Prefetching per performance
     document.querySelectorAll('a[href*="instagram.com"], a[href*="behance.net"], a[href*="linkedin.com"]').forEach(link => {
       link.rel = 'prefetch';
     });
-
-    // Service Worker per offline support (opzionale)
-    if ('serviceWorker' in navigator) {
-      // Puoi implementare un service worker qui per supporto offline
-    }
 
     // Performance monitoring
     if (window.performance) {
