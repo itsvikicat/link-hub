@@ -79,6 +79,68 @@
       background: var(--paper);
     }
 
+    body.intro-lock {
+      overflow: hidden;
+    }
+
+    .intro-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--paper);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      animation: loaderExit 900ms ease 2.25s forwards;
+    }
+
+    .intro-loader.is-hidden {
+      display: none;
+    }
+
+    .intro-loader-inner {
+      text-align: center;
+    }
+
+    .intro-word {
+      display: flex;
+      justify-content: center;
+      gap: clamp(0.03em, 0.75vw, 0.16em);
+      color: var(--ink);
+      font-size: clamp(2.6rem, 13vw, 8.8rem);
+      font-weight: 700;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .intro-word span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(34px) scale(0.96);
+      animation: letterReveal 760ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .intro-word span:nth-child(1) { animation-delay: 80ms; }
+    .intro-word span:nth-child(2) { animation-delay: 150ms; }
+    .intro-word span:nth-child(3) { animation-delay: 220ms; }
+    .intro-word span:nth-child(4) { animation-delay: 290ms; }
+    .intro-word span:nth-child(5) { animation-delay: 360ms; }
+    .intro-word span:nth-child(6) { animation-delay: 430ms; }
+    .intro-word span:nth-child(7) { animation-delay: 500ms; }
+    .intro-word span:nth-child(8) { animation-delay: 570ms; }
+    .intro-word span:nth-child(9) { animation-delay: 640ms; }
+
+    .intro-name {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(0.92rem, 2.6vw, 1.2rem);
+      font-weight: 600;
+      opacity: 0;
+      animation: nameReveal 680ms ease 920ms forwards;
+    }
+
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -339,6 +401,27 @@
       }
     }
 
+    @keyframes letterReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes nameReveal {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes loaderExit {
+      to {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.025);
+      }
+    }
+
     @media (max-width: 560px) {
       body {
         justify-content: flex-start;
@@ -367,6 +450,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .intro-loader {
+        display: none;
+      }
+
       *,
       *::before,
       *::after {
@@ -378,7 +465,24 @@
     }
   </style>
 </head>
-<body>
+<body class="intro-lock">
+  <div class="intro-loader" id="introLoader" aria-hidden="true">
+    <div class="intro-loader-inner">
+      <div class="intro-word" aria-label="Portfolio">
+        <span>P</span>
+        <span>O</span>
+        <span>R</span>
+        <span>T</span>
+        <span>F</span>
+        <span>O</span>
+        <span>L</span>
+        <span>I</span>
+        <span>O</span>
+      </div>
+      <p class="intro-name">Victoria Catroppa</p>
+    </div>
+  </div>
+
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambia tema" aria-pressed="false">
     <i class="fas fa-moon" aria-hidden="true"></i>
   </button>
@@ -437,6 +541,7 @@
   </footer>
 
   <script>
+    const introLoader = document.getElementById('introLoader');
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -453,6 +558,16 @@
     }
 
     setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.body.classList.remove('intro-lock');
+      introLoader.classList.add('is-hidden');
+    } else {
+      window.setTimeout(() => {
+        document.body.classList.remove('intro-lock');
+        introLoader.classList.add('is-hidden');
+      }, 3250);
+    }
 
     themeToggle.addEventListener('click', () => {
       setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark');
