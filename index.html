@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Victoria Catroppa - Graphic Designer Portfolio. Scopri i miei progetti su Instagram, Behance e LinkedIn.">
-  <meta name="keywords" content="graphic design, designer, portfolio, Victoria Catroppa, Behance, Instagram">
+  <meta name="description" content="Victoria Catroppa, graphic designer. Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
   <meta name="author" content="Victoria Catroppa">
   <meta property="og:title" content="Victoria Catroppa - Graphic Designer">
-  <meta property="og:description" content="Portfolio di Victoria Catroppa, Graphic Designer specializzata in design creativo.">
+  <meta property="og:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#5e2ca5">
-  
+  <meta property="og:url" content="https://itsvikicat.github.io/link-hub/">
+  <meta property="og:image" content="https://itsvikicat.github.io/link-hub/favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Victoria Catroppa - Graphic Designer">
+  <meta name="twitter:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
+  <meta name="theme-color" content="#4f277c">
+
   <title>Victoria Catroppa - Graphic Designer</title>
 
-  <!-- Font Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome per le icone social -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- Favicon -->
+
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicon.svg">
 
@@ -30,14 +33,16 @@
     }
 
     :root {
-      --primary-color: #5e2ca5;
-      --primary-light: #c8a2ff;
-      --primary-lighter: #e0c9ff;
-      --primary-lightest: #e8d9ff;
-      --secondary-color: #8b6ba8;
-      --text-dark: #1a1a1a;
-      --bg-light: #f5f1ff;
-      --transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      --ink: #17131d;
+      --paper: #fbf8f4;
+      --paper-soft: #f3ece5;
+      --violet: #4f277c;
+      --violet-soft: #805bb0;
+      --coral: #d96c5f;
+      --mint: #88b7a3;
+      --line: rgba(23, 19, 29, 0.14);
+      --shadow: 0 18px 45px rgba(48, 31, 74, 0.16);
+      --transition: 220ms ease;
     }
 
     html {
@@ -45,263 +50,258 @@
     }
 
     body {
+      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(115deg, rgba(217, 108, 95, 0.13), transparent 42%),
+        linear-gradient(245deg, rgba(136, 183, 163, 0.16), transparent 45%),
+        var(--paper);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--bg-light) 0%, #f0e6ff 50%, #ede0ff 100%);
-      position: relative;
       overflow-x: hidden;
-      color: var(--text-dark);
     }
 
-    /* Effetto background sottile */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 50%, rgba(200, 162, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(94, 44, 165, 0.05) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 1;
+    body.dark-mode {
+      --ink: #f8f3ed;
+      --paper: #17131d;
+      --paper-soft: #211a2b;
+      --violet: #d9c3ff;
+      --violet-soft: #b998e7;
+      --coral: #ff9a89;
+      --mint: #a7d4c1;
+      --line: rgba(248, 243, 237, 0.16);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+      background:
+        linear-gradient(115deg, rgba(217, 108, 95, 0.13), transparent 42%),
+        linear-gradient(245deg, rgba(136, 183, 163, 0.13), transparent 45%),
+        var(--paper);
     }
 
-    /* Theme Toggle Button */
     .theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid var(--primary-color);
+      z-index: 10;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      background: color-mix(in srgb, var(--paper-soft) 72%, white);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(94, 44, 165, 0.15);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition), color var(--transition);
     }
 
     .theme-toggle:hover {
-      transform: scale(1.1) rotate(20deg);
-      background: var(--primary-light);
-      color: white;
-      box-shadow: 0 6px 20px rgba(94, 44, 165, 0.3);
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color: #e0e0e0;
-    }
-
-    body.dark-mode::before {
-      background: radial-gradient(circle at 20% 50%, rgba(200, 162, 255, 0.05) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(94, 44, 165, 0.02) 0%, transparent 50%);
-    }
-
-    body.dark-mode .theme-toggle {
-      background: rgba(30, 30, 30, 0.9);
-      color: #ffd700;
-    }
-
-    body.dark-mode .container {
-      color: #e0e0e0;
-    }
-
-    body.dark-mode h1 {
-      color: #d4b3ff;
-    }
-
-    body.dark-mode .subtitle {
-      color: #b8a4c8;
-    }
-
-    body.dark-mode .btn {
-      background: linear-gradient(135deg, #8b5fbf 0%, #a06fd9 100%);
-      box-shadow: 0 8px 16px rgba(94, 44, 165, 0.3);
-    }
-
-    body.dark-mode .btn:hover {
-      background: linear-gradient(135deg, #a06fd9 0%, #b57fee 100%);
-      box-shadow: 0 12px 24px rgba(94, 44, 165, 0.5);
-    }
-
-    body.dark-mode .stats-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(200, 162, 255, 0.2);
-    }
-
-    body.dark-mode .contact-section {
-      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      border-color: var(--violet-soft);
+      color: var(--violet);
     }
 
     .container {
-      position: relative;
-      z-index: 2;
+      width: min(100%, 640px);
+      padding: 56px 22px 28px;
       text-align: center;
-      animation: fadeIn 0.8s ease-out;
-      max-width: 600px;
-      padding: 40px 20px;
+      animation: fadeIn 700ms ease-out;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .brand-mark {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-soft);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-mark img {
+      width: 54px;
+      height: 54px;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 8px;
-      color: var(--primary-color);
+      color: var(--violet);
+      font-size: clamp(2.25rem, 7vw, 4.25rem);
+      line-height: 0.98;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      animation: fadeIn 0.8s ease-out 0.1s both;
-      position: relative;
-      display: inline-block;
-    }
-
-    h1::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), transparent);
-      animation: expandWidth 0.8s ease-out 0.4s forwards;
-    }
-
-    @keyframes expandWidth {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
+      letter-spacing: 0;
+      margin-bottom: 14px;
     }
 
     .subtitle {
-      font-size: 16px;
-      color: var(--secondary-color);
-      margin-bottom: 12px;
-      font-weight: 400;
-      animation: fadeIn 0.8s ease-out 0.2s both;
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0;
     }
 
     .tagline {
-      font-size: 14px;
-      color: #a89bc4;
-      margin-bottom: 40px;
-      font-style: italic;
-      animation: fadeIn 0.8s ease-out 0.25s both;
+      max-width: 520px;
+      margin: 0 auto 30px;
+      color: color-mix(in srgb, var(--ink) 72%, transparent);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
-    /* Statistics Section */
-    .stats-container {
+    .specialties {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 0 0 32px;
+      list-style: none;
+    }
+
+    .specialties li {
+      min-height: 74px;
+      padding: 14px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--paper-soft) 78%, white);
+      color: var(--ink);
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      animation: fadeIn 0.8s ease-out 0.3s both;
+      font-size: 0.84rem;
+      font-weight: 600;
+      line-height: 1.3;
+      box-shadow: 0 8px 24px rgba(48, 31, 74, 0.08);
+      transition: transform var(--transition), border-color var(--transition);
     }
 
-    .stats-card {
-      background: rgba(255, 255, 255, 0.7);
-      padding: 15px 25px;
-      border-radius: 15px;
-      border: 2px solid rgba(94, 44, 165, 0.1);
-      transition: var(--transition);
+    .specialties li:nth-child(1) {
+      border-top: 4px solid var(--violet-soft);
     }
 
-    .stats-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary-color);
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 8px 16px rgba(94, 44, 165, 0.2);
+    .specialties li:nth-child(2) {
+      border-top: 4px solid var(--coral);
     }
 
-    .stats-card span {
-      display: block;
-      font-weight: 700;
-      color: var(--primary-color);
-      font-size: 24px;
+    .specialties li:nth-child(3) {
+      border-top: 4px solid var(--mint);
     }
 
-    .stats-card p {
-      font-size: 12px;
-      color: var(--secondary-color);
-      margin-top: 5px;
+    .specialties li:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--violet) 36%, var(--line));
     }
 
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
+      gap: 12px;
+      margin-bottom: 28px;
     }
 
-    .btn {
+    .btn,
+    .contact-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 16px 40px;
-      min-width: 260px;
-      background: linear-gradient(135deg, var(--primary-light) 0%, #d4b3ff 100%);
-      color: #fff;
+      min-height: 58px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-      border-radius: 30px;
-      transition: var(--transition);
-      box-shadow: 0 8px 16px rgba(94, 44, 165, 0.15);
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      animation: slideUp 0.6s ease-out backwards;
+      font-weight: 700;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
     }
 
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
+    .btn {
       width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-      transition: left 0.5s ease;
+      padding: 16px 24px;
+      border: 1px solid transparent;
+      background: var(--violet);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(79, 39, 124, 0.22);
     }
 
-    .btn:hover::before {
-      left: 100%;
+    .btn:nth-child(2) {
+      background: var(--ink);
     }
 
-    .btn:nth-child(1) { animation-delay: 0.3s; }
-    .btn:nth-child(2) { animation-delay: 0.4s; }
-    .btn:nth-child(3) { animation-delay: 0.5s; }
+    .btn:nth-child(3) {
+      background: color-mix(in srgb, var(--violet) 84%, var(--coral));
+    }
 
-    @keyframes slideUp {
+    .btn:hover,
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:focus-visible,
+    .contact-btn:focus-visible,
+    .theme-toggle:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+    }
+
+    .btn i,
+    .contact-btn i {
+      font-size: 1.2rem;
+    }
+
+    .contact-section {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--paper-soft) 84%, white);
+      box-shadow: 0 10px 30px rgba(48, 31, 74, 0.09);
+    }
+
+    .contact-section h2 {
+      color: var(--violet);
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .contact-section p {
+      margin: 0 auto 18px;
+      max-width: 440px;
+      color: color-mix(in srgb, var(--ink) 72%, transparent);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .contact-btn {
+      padding: 13px 22px;
+      background: var(--coral);
+      color: #fff;
+    }
+
+    footer {
+      width: min(100%, 640px);
+      padding: 0 22px 28px;
+      color: color-mix(in srgb, var(--ink) 58%, transparent);
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    footer a {
+      color: var(--violet);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(12px);
       }
       to {
         opacity: 1;
@@ -309,285 +309,107 @@
       }
     }
 
-    .btn:hover {
-      background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--primary-lightest) 100%);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(94, 44, 165, 0.25),
-                  0 0 30px rgba(94, 44, 165, 0.2);
-    }
+    @media (max-width: 560px) {
+      body {
+        justify-content: flex-start;
+      }
 
-    .btn:active {
-      transform: translateY(-1px);
-    }
+      .container {
+        padding-top: 88px;
+      }
 
-    .btn i {
-      font-size: 22px;
-      transition: transform 0.3s ease;
-    }
-
-    .btn:hover i {
-      transform: scale(1.15) rotate(-10deg);
-    }
-
-    /* Contact Section */
-    .contact-section {
-      margin-top: 20px;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 20px;
-      border: 2px solid rgba(94, 44, 165, 0.1);
-      animation: slideUp 0.6s ease-out 0.6s backwards;
-    }
-
-    .contact-section h3 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      font-size: 20px;
-    }
-
-    .contact-btn {
-      display: inline-flex;
-      gap: 8px;
-      padding: 12px 25px;
-      background: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-
-    .contact-btn:hover {
-      background: var(--primary-light);
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(94, 44, 165, 0.25);
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
       .theme-toggle {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-        top: 15px;
-        right: 15px;
+        top: 16px;
+        right: 16px;
       }
 
-      h1 {
-        font-size: 36px;
-        margin-bottom: 5px;
+      .specialties {
+        grid-template-columns: 1fr;
       }
 
-      .subtitle {
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-
-      .tagline {
-        margin-bottom: 25px;
-      }
-
-      .stats-container {
-        gap: 12px;
-        margin-bottom: 30px;
-      }
-
-      .stats-card {
-        padding: 12px 18px;
-      }
-
-      .stats-card span {
-        font-size: 20px;
-      }
-
-      .btn {
-        min-width: 240px;
-        padding: 14px 30px;
-        font-size: 16px;
-      }
-
-      .links-container {
-        gap: 12px;
-        margin-bottom: 30px;
-      }
-
-      .contact-section {
-        padding: 20px;
-        margin-top: 15px;
-      }
-
-      .contact-section h3 {
-        font-size: 18px;
-      }
-
-      .contact-btn {
-        padding: 10px 20px;
-        font-size: 14px;
+      .specialties li {
+        min-height: 58px;
       }
     }
 
-    /* Footer */
-    footer {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      color: #a89bc4;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: var(--primary-light);
-    }
-
-    /* Hover glow effect */
-    .glow-hover {
-      position: relative;
-    }
-
-    .glow-hover::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at center, rgba(200, 162, 255, 0.2) 0%, transparent 70%);
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .glow-hover:hover::after {
-      opacity: 1;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Cambia tema">
-    <i class="fas fa-moon"></i>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambia tema" aria-pressed="false">
+    <i class="fas fa-moon" aria-hidden="true"></i>
   </button>
 
-  <div class="container">
+  <main class="container">
+    <div class="brand-mark" aria-hidden="true">
+      <img src="favicon.svg" alt="">
+    </div>
+
     <h1>Victoria Catroppa</h1>
     <p class="subtitle">Graphic Designer</p>
-    <p class="tagline">Creatività, passione e design senza compromessi</p>
+    <p class="tagline">Identità visive, contenuti social e progetti editoriali con un'estetica bold, curata e riconoscibile.</p>
 
-    <!-- Statistics -->
-    <div class="stats-container">
-      <div class="stats-card glow-hover">
-        <span>5+</span>
-        <p>Anni di Esperienza</p>
-      </div>
-      <div class="stats-card glow-hover">
-        <span>✨</span>
-        <p>Tanti Progetti</p>
-      </div>
-    </div>
+    <ul class="specialties" aria-label="Aree di specializzazione">
+      <li>Brand identity</li>
+      <li>Social content</li>
+      <li>Editorial design</li>
+    </ul>
 
-    <!-- Social Links -->
-    <div class="links-container">
-      <a href="https://www.instagram.com/osnapitzvikicat/" class="btn glow-hover" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i> Instagram
+    <div class="links-container" aria-label="Link principali">
+      <a href="https://www.instagram.com/osnapitzvikicat/" class="btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
       </a>
-      <a href="https://www.behance.net/victoricatropp" class="btn glow-hover" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-behance"></i> Behance
+      <a href="https://www.behance.net/victoricatropp" class="btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-behance" aria-hidden="true"></i> Behance
       </a>
-      <a href="https://www.linkedin.com/in/victoria-catroppa-08a5a2292/" class="btn glow-hover" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i> LinkedIn
+      <a href="https://www.linkedin.com/in/victoria-catroppa-08a5a2292/" class="btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
       </a>
     </div>
 
-    <!-- Contact Section -->
-    <div class="contact-section">
-      <h3>📧 Vuoi contattarmi?</h3>
-      <p style="margin-bottom: 15px; font-size: 14px;">Sono disponibile per collaborazioni e nuovi progetti.</p>
-      <a href="mailto:victoriacatroppa@gmail.com" class="contact-btn" title="Invia email">
-        <i class="fas fa-envelope"></i> Invia Email
+    <section class="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Parliamo del tuo prossimo progetto</h2>
+      <p>Disponibile per brand identity, social kit, layout editoriali e collaborazioni creative.</p>
+      <a href="mailto:victoriacatroppa@gmail.com" class="contact-btn">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Scrivimi
       </a>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Victoria Catroppa. Tutti i diritti riservati. | 
-    <a href="https://github.com/itsvikicat" target="_blank">GitHub</a>
-    </p>
+    <p>&copy; 2026 Victoria Catroppa. Tutti i diritti riservati. | <a href="https://github.com/itsvikicat" target="_blank" rel="noopener noreferrer">GitHub</a></p>
   </footer>
 
   <script>
-    // Dark Mode Toggle
     const themeToggle = document.getElementById('themeToggle');
-    const htmlElement = document.documentElement;
     const body = document.body;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
 
-    // Check per dark mode preference
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    function setTheme(theme) {
+      const isDark = theme === 'dark';
+      body.classList.toggle('dark-mode', isDark);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.innerHTML = isDark
+        ? '<i class="fas fa-sun" aria-hidden="true"></i>'
+        : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      localStorage.setItem('theme', theme);
     }
+
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 
     themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        localStorage.setItem('theme', 'light');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      }
+      setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark');
     });
-
-    // Smooth scroll per link
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Track link clicks
-    document.querySelectorAll('.btn').forEach(button => {
-      button.addEventListener('click', function(e) {
-        const platform = this.textContent.trim().split('\n')[0];
-        console.log(`Link cliccato: ${platform}`);
-      });
-    });
-
-    // Animazione al caricamento
-    window.addEventListener('load', () => {
-      console.log('Portfolio caricato con successo! 🎨');
-    });
-
-    // Prefetching per performance
-    document.querySelectorAll('a[href*="instagram.com"], a[href*="behance.net"], a[href*="linkedin.com"]').forEach(link => {
-      link.rel = 'prefetch';
-    });
-
-    // Performance monitoring
-    if (window.performance) {
-      window.addEventListener('load', () => {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Tempo di caricamento: ${pageLoadTime}ms ⚡`);
-      });
-    }
   </script>
 </body>
 </html>
