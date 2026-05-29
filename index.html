@@ -9,7 +9,7 @@
   <meta property="og:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://itsvikicat.github.io/link-hub/">
-  <meta property="og:image" content="https://itsvikicat.github.io/link-hub/brand-icon-black.png">
+  <meta property="og:image" content="https://itsvikicat.github.io/link-hub/brand-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Victoria Catroppa - Graphic Designer">
   <meta name="twitter:description" content="Identità visive, contenuti social e progetti editoriali con un'estetica bold e curata.">
@@ -110,16 +110,8 @@
       display: block;
     }
 
-    .brand-logo-dark {
-      display: none;
-    }
-
-    body.dark-mode .brand-logo-light {
-      display: none;
-    }
-
-    body.dark-mode .brand-logo-dark {
-      display: block;
+    body.dark-mode .brand-logo {
+      filter: invert(1);
     }
 
     h1 {
@@ -293,8 +285,7 @@
   </button>
 
   <main class="container">
-    <img class="brand-logo brand-logo-light" src="brand-icon-black.png" alt="Vikenike Design">
-    <img class="brand-logo brand-logo-dark" src="brand-icon-white.png" alt="Vikenike Design">
+    <img class="brand-logo" src="brand-icon.png" alt="Vikenike Design">
 
     <h1>Victoria Catroppa</h1>
     <p class="subtitle">Graphic Designer</p>
