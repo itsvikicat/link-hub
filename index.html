@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Victoria Catroppa, graphic designer. Identità visive, editoria e contenuti digitali.">
+  <meta name="description" content="Victoria Catroppa, graphic designer. Brand identity, editoria e contenuti digitali.">
   <meta name="author" content="Victoria Catroppa">
   <meta property="og:title" content="Victoria Catroppa - Portfolio">
-  <meta property="og:description" content="Identità visive, editoria e contenuti digitali.">
+  <meta property="og:description" content="Brand identity, editoria e contenuti digitali.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://itsvikicat.github.io/link-hub/">
   <meta property="og:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Victoria Catroppa - Portfolio">
-  <meta name="twitter:description" content="Identità visive, editoria e contenuti digitali.">
+  <meta name="twitter:description" content="Brand identity, editoria e contenuti digitali.">
   <meta name="twitter:image" content="https://itsvikicat.github.io/link-hub/og-image.svg">
   <meta name="theme-color" content="#ffffff">
 
@@ -39,7 +39,7 @@
       --button: #ff8fc4;
       --button-hover: #ffaed4;
       --soft: #ffe9f3;
-      --shadow: 0 14px 34px rgba(184, 64, 123, 0.14);
+      --shadow: 0 10px 26px rgba(184, 64, 123, 0.12);
     }
 
     body {
@@ -59,16 +59,16 @@
     }
 
     .logo {
-      width: clamp(62px, 18vw, 88px);
+      width: clamp(62px, 16vw, 74px);
       height: auto;
       display: block;
-      margin: 0 auto 22px;
+      margin: 0 auto 26px;
     }
 
     h1 {
       color: var(--ink);
-      font-size: clamp(2rem, 9vw, 2.85rem);
-      font-weight: 700;
+      font-size: clamp(1.82rem, 8vw, 2.42rem);
+      font-weight: 600;
       line-height: 1;
       letter-spacing: 0;
       margin-bottom: 10px;
@@ -95,7 +95,7 @@
 
     .description {
       max-width: 320px;
-      margin: 0 auto 26px;
+      margin: 0 auto 24px;
       font-size: 0.94rem;
       line-height: 1.45;
       font-weight: 500;
@@ -104,12 +104,12 @@
     .links {
       display: grid;
       gap: 11px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .button {
-      min-height: 52px;
-      padding: 13px 20px;
+      min-height: 48px;
+      padding: 11px 20px;
       border-radius: 999px;
       background: var(--button);
       color: var(--ink);
@@ -120,7 +120,7 @@
       font-size: 0.96rem;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 10px 24px rgba(184, 64, 123, 0.12);
+      box-shadow: 0 8px 18px rgba(184, 64, 123, 0.09);
       transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
     }
 
@@ -137,15 +137,20 @@
 
     .button i {
       font-size: 1.18rem;
+      transition: transform 220ms ease;
+    }
+
+    .button:hover i {
+      transform: rotate(-10deg) scale(1.08);
     }
 
     .contact {
-      width: min(100%, 310px);
+      width: min(100%, 292px);
       margin: 0 auto;
-      padding: 15px 18px;
-      border-radius: 22px;
+      padding: 13px 16px;
+      border-radius: 18px;
       background: var(--soft);
-      box-shadow: 0 10px 24px rgba(184, 64, 123, 0.1);
+      box-shadow: 0 6px 16px rgba(184, 64, 123, 0.08);
     }
 
     .contact p {
@@ -156,14 +161,26 @@
     }
 
     .email {
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: #fff;
       color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
       font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
+      box-shadow: 0 6px 14px rgba(184, 64, 123, 0.08);
+      transition: transform 220ms ease, color 220ms ease, box-shadow 220ms ease;
     }
 
     .email:hover {
       color: var(--pink);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(184, 64, 123, 0.12);
     }
 
     @media (max-width: 420px) {
@@ -179,7 +196,7 @@
 
     <h1>Victoria Catroppa</h1>
     <p class="role">Graphic Designer</p>
-    <p class="description">Identità visive, editoria e contenuti digitali.</p>
+    <p class="description">Brand identity, editoria e contenuti digitali.</p>
 
     <nav class="links" aria-label="Link social">
       <a class="button" href="https://www.behance.net/victoricatropp" target="_blank" rel="noopener noreferrer">
@@ -195,7 +212,9 @@
 
     <section class="contact" aria-label="Contatto email">
       <p>Per progetti e collaborazioni</p>
-      <a class="email" href="mailto:victoriacatroppa@gmail.com">victoriacatroppa@gmail.com</a>
+      <a class="email" href="mailto:victoriacatroppa@gmail.com">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Contattami
+      </a>
     </section>
   </main>
 </body>
